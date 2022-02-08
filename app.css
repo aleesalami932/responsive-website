@@ -1,0 +1,430 @@
+/* we reset out page by removing margins adding and box border we can define globale aspects that will affect the whole page here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* we start by giving the navbar a flex display we justify the content anf align items to the center */
+.navbar {
+  background: #212529;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* we make the container for the navbar with a max width so the items dont stick to the screen we use space between here so the side items go to the side and the middle ones stay centered in the middle*/
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* we style the brand here */
+#navbar__logo {
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0);
+  background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0);
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+/* we customize out ul here by setting its displayu to flex so items ca be responsive */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+/* we customize the li here */
+.navbar__item {
+  height: 80px;
+}
+
+/* we customize each item here we use this to center the items in the nav bar*/
+.navbar__links {
+  color: #ffffff8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  height: 100%;
+  transition: 300ms ease;
+}
+
+.navbar__links:hover {
+  color: #ffffffc4;
+}
+
+/* to control the resonsiveness of the page when the size changes */
+@media screen and (max-width: 992px) {
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  /* we change the display type to grid and give it a columns temlate we remove margin and give it an absolute position we put it off screen and gie it a transition */
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  /* when we click the menu it will drop by setting top to 100% */
+  .navbar__menu.active {
+    background: #212529;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbar__logo {
+    padding-left: 25px;
+  }
+
+  /* we create the bars for the menu */
+  .navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    display: block;
+    cursor: pointer;
+  }
+  /* we give padding for the nav items */
+  .navbar__item {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  /* center and align the links in the drop down menu */
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  /* position the burger button to the top right */
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+  /*  the transition from 3 bars to x */
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* customizing the hero section */
+/* we set the back ground color to a linear gradient */
+.hero {
+  background: #000;
+  background: linear-gradient(to right, #161616, #000);
+  padding: 200px;
+}
+
+/* we make a container for the hero section */
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90%;
+  text-align: center;
+  padding: 30px;
+}
+
+/* customizing the header */
+.hero__heading {
+  font-size: 100px;
+  margin-bottom: 24px;
+  color: white;
+}
+
+/* customizing the span with a gradeint color */
+.hero__heading span {
+  background: #fc00ff;
+  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
+  background: linear-gradient(to right, #00dbde, #fc00ff);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+/* customizing the span with a gradeint color */
+.hero__description {
+  font-size: 60px;
+  background: #da22ff;
+  background: -webkit-linear-gradient(to right, #9114ff, #da22ff);
+  background: linear-gradient(to right, #8f0eff, #da22ff);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.highlight {
+  border-bottom: 4px solid rgb(132, 0, 255);
+}
+/* change the font size of the hero secion when screen gets smaller */
+@media screen and (max-width: 768px) {
+  .hero__heading {
+    font-size: 60px;
+  }
+
+  .hero__description {
+    font-size: 40px;
+  }
+}
+
+/* customizing the about section */
+
+.main {
+  padding: 10rem 0;
+  background-color: #131313;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 90%;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+.main__content {
+  color: #fff;
+  width: 100%;
+}
+
+.main__content h1 {
+  font-size: 2rem;
+  background: #f7ff00;
+  background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
+  background: linear-gradient(to right, #db36a4, #f7ff00);
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.main__content h2 {
+  font-size: 4rem;
+  background: #feac5e;
+  background: -webkit-linear-gradient(to left, #feac5e, #c779d0, #4bc0c8);
+  background: linear-gradient(to left, #feac5e, #c779d0, #4bc0c8);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-bottom: 24px;
+}
+
+.main__content p {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.main__btn {
+  font-size: 1.8rem;
+  background: #d38312;
+  background: -webkit-linear-gradient(to left, #d38312, #a83279);
+  background: linear-gradient(to left, #d38312, #a83279);
+  padding: 20px 60px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
+}
+
+.main__btn a {
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  color: #000;
+}
+
+.main__btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #d83798;
+  transition: all 0.35s;
+  border-radius: 4px;
+}
+
+.main__btn:hover {
+  color: #fff;
+}
+
+.main__btn:hover:after {
+  width: 100%;
+}
+
+.main__img--container {
+  text-align: center;
+  margin: 1rem;
+}
+
+.main__img--card {
+  margin: 10px;
+  height: 500px;
+  width: 500px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+}
+
+.fa-layer-group,
+.fa-users {
+  font-size: 14rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .main__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 90%;
+    /* padding-left: 4rem; */
+  }
+
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
+  .main__img--card {
+    height: 425px;
+    width: 425px;
+  }
+
+  .main__content {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .main__content h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .main__content h2 {
+    font-size: 3rem;
+  }
+
+  .main__content p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__img--card {
+    height: 250px;
+    width: 250px;
+  }
+
+  .fa-users,
+  .fa-layer-group {
+    font-size: 4rem;
+  }
+  .main__content h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  .main__content h2 {
+    font-size: 2rem;
+  }
+
+  .main__content p {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .main__btn {
+    padding: 12px 36px;
+    margin: 2.5rem 0;
+  }
+}
+
+#card-2 {
+  background: #d38312;
+  background: -webkit-linear-gradient(to left, #d38312, #a83279);
+  background: linear-gradient(to left, #d38312, #a83279);
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Can i please get the hang of css</title>
+    <link rel="stylesheet" href="app.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <!-- to create a nav bar start with creating a nav tag and a container for the nav bar -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <!-- in side the container create a "a" tag for the logo -->
+        <a href="#home" id="navbar__logo">Frontend Bootcamp</a>
+        <!-- create a hamburger menu using -->
+        <div class="navbar__toggle" id="mobile-menu">
+          <!-- create 3 bars for the buton -->
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <!-- create a ul to put in it the nav bar items -->
+        <ul class="navbar__menu">
+          <!-- inside the ul create li with a tag in them for each navbar item or link -->
+          <li class="navbar__item">
+            <a href="#learning" class="navbar__links" id="learning-page"
+              >Learning Material</a
+            >
+          </li>
+          <li class="navbar__item">
+            <a href="#questions" class="navbar__links" id="Questions-page"
+              >Questions</a
+            >
+          </li>
+          <li class="navbar__item">
+            <a href="#instructors" class="navbar__links" id="Instructors-page"
+              >Instructors</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--   hero Section -->
+    <div class="hero" id="home">
+      <div class="hero__container">
+        <h1 class="hero__heading">Choose your <span>colors</span></h1>
+        <p class="hero__description">Unlimited Possibilities</p>
+        <button class="main__btn">
+          <a href="#">Explore</a>
+        </button>
+      </div>
+    </div>
+
+    <!-- about section -->
+    <div class="main" id="about">
+      <div class="main__container">
+        <div class="main__img--container">
+          <div class="main__img--card"><i class="fas fa-layer-group"></i></div>
+        </div>
+        <div class="main__content">
+          <h1>What do we do?</h1>
+          <h2>we give colors</h2>
+          <p>Schedual a call to learn how to use colors</p>
+          <button class="main__btn">
+            <a href="#">Schedual Call</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
