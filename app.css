@@ -37,7 +37,6 @@
   background: #03001e;
   background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0);
   background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0);
-
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -69,17 +68,45 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 0.5rem;
+  width: 125px;
+  /* padding: 0.5rem; */
   height: 100%;
   transition: 300ms ease;
 }
 
 .navbar__links:hover {
-  color: #ffffffc4;
+  color: #9c2be7;
+}
+/* button centering */
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* button customization */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 /* to control the resonsiveness of the page when the size changes */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 960px) {
   .navbar__container {
     display: flex;
     justify-content: space-between;
@@ -175,7 +202,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   height: 90%;
   text-align: center;
@@ -235,6 +262,7 @@
   background-color: #131313;
 }
 
+/* we create the container of grid dislay so we can put items next to each other and stack them on top of each other when the screen gets smaller */
 .main__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -248,17 +276,18 @@
   padding: 0 50px;
 }
 
+/* we customize the elemnts in the text area */
 .main__content {
   color: #fff;
   width: 100%;
 }
 
+/* h1 customization with gradient colors */
 .main__content h1 {
   font-size: 2rem;
   background: #f7ff00;
   background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
   background: linear-gradient(to right, #db36a4, #f7ff00);
-
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -268,6 +297,7 @@
   margin-bottom: 24px;
 }
 
+/* h2 customization with gradient colors */
 .main__content h2 {
   font-size: 4rem;
   background: #feac5e;
@@ -281,6 +311,7 @@
   margin-bottom: 24px;
 }
 
+/* text customization for the paragraph */
 .main__content p {
   margin-top: 1rem;
   font-size: 2rem;
@@ -288,6 +319,7 @@
   margin-bottom: 24px;
 }
 
+/* button customization with gradient colors */
 .main__btn {
   font-size: 1.8rem;
   background: #d38312;
@@ -303,12 +335,15 @@
   outline: none;
 }
 
+/* removing text decoration from the link in the button */
 .main__btn a {
   text-decoration: none;
   position: relative;
   z-index: 2;
   color: #000;
 }
+
+/* button animation section */
 
 .main__btn:after {
   position: absolute;
@@ -330,11 +365,13 @@
   width: 100%;
 }
 
+/* for the image part we start by making an image container */
 .main__img--container {
   text-align: center;
   margin: 1rem;
 }
 
+/* ew create an image card inside the container */
 .main__img--card {
   margin: 10px;
   height: 500px;
@@ -347,11 +384,13 @@
   background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
 }
 
+/* customization of icon from font awesome */
 .fa-layer-group,
 .fa-users {
   font-size: 14rem;
 }
 
+/* making the about part resonsive for screens bellow 1100px */
 @media screen and (max-width: 1100px) {
   .main__container {
     display: grid;
@@ -393,6 +432,7 @@
   }
 }
 
+/* making the about part resonsive for screens bellow 480px */
 @media screen and (max-width: 480px) {
   .main__img--card {
     height: 250px;
@@ -427,4 +467,246 @@
   background: #d38312;
   background: -webkit-linear-gradient(to left, #d38312, #a83279);
   background: linear-gradient(to left, #d38312, #a83279);
+}
+
+/* customizing the services section */
+.services {
+  background: #131313;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10rem 0;
+}
+
+.services h1 {
+  background: #ff8177;
+  background: linear-gradient(to right, #c07229, #df6eec, #67dee7);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-bottom: 5rem;
+  font-size: 2.5rem;
+}
+
+/* to make a wrapper */
+.services__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* making a card */
+.services__card {
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  margin: 10px;
+  height: 425px;
+  width: 300px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+/* changing the card of index n color */
+.services__card:nth-child(2) {
+  background: #3494e6;
+  background: -webkit-linear-gradient(to right, #ec6ead, #3494e6);
+  background: linear-gradient(to right, #ec6ead, #3494e6);
+}
+.services__card:nth-child(3) {
+  background: #ef32d9;
+  background: -webkit-linear-gradient(to right, #89fffd, #ef32d9);
+  background: linear-gradient(to right, #89fffd, #ef32d9);
+}
+.services__card:nth-child(4) {
+  background-image: linear-gradient(
+    -225deg,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  );
+}
+
+.services__card h2 {
+  text-align: center;
+}
+.services__card p {
+  margin-top: 24px;
+  font-size: 20px;
+}
+
+.services__btn {
+  display: flex;
+  /* justify-content: center; */
+  margin-top: 16px;
+}
+
+/* customization of button in card */
+.services__card button {
+  color: #fff;
+  padding: 14px 24px;
+  border: none;
+  outline: none;
+  background: #131313;
+  font-size: 1rem;
+}
+
+.services__card button:hover {
+  cursor: pointer;
+}
+
+.services__card:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+}
+
+/* making cards stack 2 on each row for screens less than 1300px and 1 on on a row for screens less than 786px*/
+@media screen and (max-width: 1300px) {
+  .services__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .services__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* footer customization */
+
+/* as usual we start with the container */
+.footer__container {
+  background-color: #131313;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* we customize the logo  */
+#footer__logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+/* we customize the links */
+.footer__links {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+/* make the wraper flex so items are next to each other */
+.footer__links--wrapper {
+  display: flex;
+}
+
+/* customization of items inside the footer */
+.footer__link--items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px;
+  text-align: left;
+  width: 160px;
+  box-sizing: border-box;
+}
+
+/* h2 customization */
+.footer__link--items h2 {
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+/* customization of links */
+.footer__link--items a {
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+
+/* adding animations  for links on hover */
+.footer__link--items a:hover {
+  color: #b8b8b8;
+  transition: 0.3s ease-out;
+}
+
+/* customizing the social icons */
+.social__icon--link {
+  color: #fff;
+  font-size: 24px;
+}
+
+/* setting the social media section */
+.socail__media {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* customizing the wrapper for the socail media icons */
+.social__media--wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+/* customizing the social meade div to position items in it*/
+.social__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+}
+
+/* customizing the rights  */
+.website__rights {
+  color: #fff;
+  margin: 15px;
+}
+
+/* making the footer responsive */
+@media screen and (max-width: 820px) {
+  .footer__links {
+    padding-top: 2rem;
+  }
+
+  #footer__logo {
+    margin-bottom: 2rem;
+  }
+
+  .website__rights {
+    margin-top: 2rem;
+  }
+
+  .footer__links--wrapper {
+    flex-direction: column;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__link--items {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
 }
